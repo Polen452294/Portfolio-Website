@@ -1,0 +1,99 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Python backend
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+.venv/
+venv/
+env/
+
+# =========================
+# FastAPI / app env
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+*.pid
+
+# =========================
+# Build / dist
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Node / frontend
+# =========================
+node_modules/
+.next/
+out/
+.vercel/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Frontend env
+# =========================
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# =========================
+# Backend local data
+# =========================
+backend/uploads/
+backend/media/
+backend/tmp/
+tmp/
+
+# =========================
+# Database / local dumps
+# =========================
+*.sqlite3
+*.db
+*.sql
+*.dump
+
+# =========================
+# Docker
+# =========================
+docker-data/
+postgres-data/
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.swp
+*.swo
