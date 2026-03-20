@@ -24,7 +24,6 @@ class RequestService:
         await self.session.commit()
         await self.session.refresh(request)
 
-        # 🔥 уведомление
         await self.notifier.send_new_request_notification(request)
 
         return request
@@ -45,7 +44,6 @@ class RequestService:
         await self.session.commit()
         await self.session.refresh(request)
 
-        # 🔥 уведомление
         await self.notifier.send_status_changed_notification(request)
 
         return request

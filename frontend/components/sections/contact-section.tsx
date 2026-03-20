@@ -1,6 +1,14 @@
 import { CheckCircle2, Github, Mail, MessageCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
+const features = [
+  "Прием и удобная обработка заявок",
+  "Личный кабинет или административная панель",
+  "Уведомления в Telegram и по email",
+  "Интеграция с CRM и внешними сервисами",
+  "Аналитика и контроль эффективности"
+];
+
 export function ContactSection() {
   return (
     <section id="contact" className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8">
@@ -11,17 +19,18 @@ export function ContactSection() {
               <MessageCircle className="h-3.5 w-3.5" />
               Contact
             </div>
+
             <h3 className="text-3xl font-semibold tracking-tight text-white">
-              Готов обсудить проект
+              Обсудить проект
             </h3>
+
             <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300 md:text-base">
-              Можно использовать этот блок как CTA в конце страницы: оставить контакты,
-              ссылку на Telegram, GitHub и быстрый переход к форме заявки.
+              Можно связаться удобным способом, описать задачу и обсудить, какое решение подойдет под цели проекта, сроки и формат работы.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#"
+                href="https://t.me/likeaatea"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08]"
               >
                 <MessageCircle className="h-4 w-4 text-emerald-300" />
@@ -29,15 +38,15 @@ export function ContactSection() {
               </a>
 
               <a
-                href="#"
+                href="https://max.ru/u/f9LHodD0cOLBuQru9TuIcrq9TtQ-rk93xm-oFACo-BCvcrba4KdlG37ts_M"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08]"
               >
-                <Github className="h-4 w-4 text-emerald-300" />
-                GitHub
+                <MessageCircle className="h-4 w-4 text-emerald-300" />
+                Max
               </a>
 
               <a
-                href="#"
+                href="https://mail.google.com/mail/u/0/#inbox"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08]"
               >
                 <Mail className="h-4 w-4 text-emerald-300" />
@@ -47,19 +56,14 @@ export function ContactSection() {
           </div>
 
           <div className="border-l border-white/10 bg-slate-950/40 p-8 md:p-10">
-            <div className="text-sm text-slate-400">Следующий логичный этап</div>
+            <div className="text-sm text-slate-400">Возможности проекта</div>
+
             <div className="mt-3 text-xl font-semibold text-white">
-              Подключить admin dashboard и уведомления
+              Что можно добавить в проект
             </div>
 
             <div className="mt-6 space-y-4">
-              {[
-                "Создать GET /api/v1/requests",
-                "Сделать страницу со списком заявок",
-                "Добавить Telegram-уведомление",
-                "Подключить аналитику",
-                "Заменить демо-контент на реальные кейсы",
-              ].map((item) => (
+              {features.map((item) => (
                 <div
                   key={item}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-200"
@@ -74,4 +78,4 @@ export function ContactSection() {
       </Card>
     </section>
   );
-}
+} 

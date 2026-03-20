@@ -47,23 +47,24 @@ export function RequestSection() {
             <FileText className="h-5 w-5" />
           </div>
 
-          <h3 className="text-2xl font-semibold text-white">Создать заказ</h3>
+          <h3 className="text-2xl font-semibold text-white">Оставить заявку</h3>
 
-          <p className="mt-3 text-sm leading-7 text-slate-300">
-            Форма связана с backend и отправляет заявку в PostgreSQL через FastAPI.
-          </p>
+        <p className="mt-3 text-sm leading-7 text-slate-300">
+          Заполните короткую форму, чтобы описать задачу. После отправки можно быстро
+          перейти к обсуждению деталей, сроков и подходящего формата работы.
+        </p>
 
-          <div className="mt-6 space-y-4 text-sm text-slate-300">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              Frontend: Next.js / React form
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              API: FastAPI endpoint /requests
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              Database: PostgreSQL + SQLAlchemy
-            </div>
+        <div className="mt-6 space-y-4 text-sm text-slate-300">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            Короткое описание задачи
           </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            Контакты для связи
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+            Удобный старт обсуждения проекта
+          </div>
+        </div>
         </Card>
 
         <motion.form
@@ -144,7 +145,7 @@ export function RequestSection() {
               {successMessage && <p className="text-emerald-300">{successMessage}</p>}
               {errorMessage && <p className="text-rose-300">{errorMessage}</p>}
               {!successMessage && !errorMessage && (
-                <p>После отправки заявка будет сохранена в базу данных.</p>
+                <p>После отправки можно перейти к обсуждению задачи, сроков и следующего шага.</p>
               )}
             </div>
 
