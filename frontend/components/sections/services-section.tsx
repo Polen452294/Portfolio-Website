@@ -36,7 +36,7 @@ export function ServicesSection() {
               >
                 {isFeatured ? (
                   <div className="mb-4 inline-flex w-fit items-center rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[10px] font-medium text-emerald-200 sm:mb-6 sm:px-3 sm:text-xs">
-                    Актуальная услуга
+                    Популярная услуга
                   </div>
                 ) : (
                   <div className="mb-3 inline-flex w-fit rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300 sm:mb-4 sm:p-3">

@@ -1,9 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  Clock3,
   Mail,
   MessageCircle,
 } from "lucide-react";
@@ -34,13 +34,29 @@ const contactItems = [
   },
   {
     title: "Email",
-    href: "mailto:yourmail@example.com",
+    href: "mailto:aardashev8@gmail.com",
     icon: Mail,
     text: "Подходит для подробного описания проекта и длинных вводных.",
   },
 ];
 
+const emailAddresses = ["aardashev8@gmail.com", "alexardashev@yandex.ru"];
+
 export function RequestSection() {
+  const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
+
+  async function handleCopyEmail(email: string) {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopiedEmail(email);
+      window.setTimeout(() => {
+        setCopiedEmail((current) => (current === email ? null : current));
+      }, 1800);
+    } catch {
+      setCopiedEmail(null);
+    }
+  }
+
   return (
     <section id="contact" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="grid gap-4 sm:gap-5 lg:grid-cols-[0.92fr_1.08fr]">
@@ -50,7 +66,9 @@ export function RequestSection() {
             Contact
           </div>
 
-          <h3 className="text-xl font-semibold text-white sm:text-2xl">Обсудить проект</h3>
+          <h3 className="text-xl font-semibold text-white sm:text-2xl">
+            Обсудить проект
+          </h3>
 
           <p className="mt-3 text-sm leading-6 text-slate-300 sm:leading-7">
             Чтобы обсудить проект, достаточно написать удобным способом и коротко описать задачу.
@@ -60,31 +78,61 @@ export function RequestSection() {
           <div className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
             {contactItems.map((item) => {
               const Icon = item.icon;
+              const isEmail = item.title === "Email";
 
               return (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] p-3.5 transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:gap-4 sm:rounded-2xl sm:p-4"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 sm:h-11 sm:w-11">
-                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </div>
-
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2 text-sm font-medium text-white">
-                      {item.title}
-                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                <div key={item.title}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] p-3.5 transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:gap-4 sm:rounded-2xl sm:p-4"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 sm:h-11 sm:w-11">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
-                    <p className="mt-1 text-sm leading-6 text-slate-300">{item.text}</p>
-                  </div>
-                </a>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 text-sm font-medium text-white">
+                        {item.title}
+                        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                      </div>
+
+                      <p className="mt-1 text-sm leading-6 text-slate-300">
+                        {item.text}
+                      </p>
+                    </div>
+                  </a>
+
+                  {isEmail && (
+                    <div className="mt-3 rounded-[20px] border border-white/10 bg-slate-950/35 px-4 py-3 sm:rounded-2xl">
+                      <p className="text-xs leading-5 text-slate-400 sm:text-sm">
+                        Если ваш браузер не поддерживает открытие почты через ссылку, можно написать
+                        напрямую. скопировав адрес нажатием:
+                      </p>
+
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {emailAddresses.map((email) => {
+                          const isCopied = copiedEmail === email;
+
+                          return (
+                            <button
+                              key={email}
+                              type="button"
+                              onClick={() => handleCopyEmail(email)}
+                              className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs text-emerald-200 transition hover:border-emerald-300/40 hover:bg-emerald-400/15 sm:text-sm"
+                            >
+                              {isCopied ? "Скопировано" : email}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
-
         </Card>
 
         <motion.div
