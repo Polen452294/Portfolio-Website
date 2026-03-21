@@ -1,168 +1,131 @@
 "use client";
 
-import { useState } from "react";
-import type { FormEvent } from "react";
-import { ArrowRight, FileText } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  FileText,
+  Mail,
+  MessageCircle,
+  Clock3,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
-import { createRequest } from "@/lib/api";
 import { Card } from "@/components/ui/card";
-import { initialRequestForm, type RequestFormState } from "@/types/request";
+
+const briefingItems = [
+  "Что нужно автоматизировать или разработать",
+  "Как сейчас выглядит процесс и где возникают сложности",
+  "Какие интеграции нужны: Telegram, Max, CRM, API, платежи и другие сервисы",
+  "Какой результат нужен на выходе",
+  "Желаемые сроки запуска",
+  "Ориентир по бюджету, если он уже есть",
+];
+
+const contactItems = [
+  {
+    title: "Telegram",
+    href: "https://t.me/likeaatea",
+    icon: MessageCircle,
+    text: "Самый быстрый способ начать обсуждение проекта.",
+  },
+  {
+    title: "Max",
+    href: "https://max.ru/u/f9LHodD0cOLBuQru9TuIcrq9TtQ-rk93xm-oFACo-BCvcrba4KdlG37ts_M",
+    icon: MessageCircle,
+    text: "Можно написать задачу и обсудить детали в удобном формате.",
+  },
+  {
+    title: "Email",
+    href: "mailto:yourmail@example.com",
+    icon: Mail,
+    text: "Подходит для подробного описания проекта и длинных вводных.",
+  },
+];
 
 export function RequestSection() {
-  const [form, setForm] = useState<RequestFormState>(initialRequestForm);
-  const [isLoading, setIsLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
-  function updateField<K extends keyof RequestFormState>(
-    key: K,
-    value: RequestFormState[K],
-  ) {
-    setForm((prev) => ({ ...prev, [key]: value }));
-  }
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setIsLoading(true);
-    setSuccessMessage("");
-    setErrorMessage("");
-
-    try {
-      await createRequest(form);
-      setSuccessMessage("Заявка успешно отправлена.");
-      setForm(initialRequestForm);
-    } catch {
-      setErrorMessage("Не удалось отправить заявку.");
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
   return (
-    <section id="request" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section id="contact" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
       <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
         <Card>
-          <div className="mb-4 inline-flex rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-emerald-300">
-            <FileText className="h-5 w-5" />
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-emerald-300">
+            <MessageCircle className="h-3.5 w-3.5" />
+            Contact
           </div>
 
-          <h3 className="text-2xl font-semibold text-white">Оставить заявку</h3>
+          <h3 className="text-2xl font-semibold text-white">Обсудить проект</h3>
 
-        <p className="mt-3 text-sm leading-7 text-slate-300">
-          Заполните короткую форму, чтобы описать задачу. После отправки можно быстро
-          перейти к обсуждению деталей, сроков и подходящего формата работы.
-        </p>
+          <p className="mt-3 text-sm leading-7 text-slate-300">
+            Чтобы обсудить проект, достаточно
+            написать удобным способом и подробно описать задачу. Этого достаточно для
+            первичной оценки, понимания формата работы и следующего шага.
+          </p>
 
-        <div className="mt-6 space-y-4 text-sm text-slate-300">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-            Короткое описание задачи
+          <div className="mt-6 space-y-4">
+            {contactItems.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-emerald-300/30 hover:bg-white/[0.07]"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 text-sm font-medium text-white">
+                      {item.title}
+                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </div>
+                    <p className="mt-1 text-sm leading-6 text-slate-300">{item.text}</p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-            Контакты для связи
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-            Удобный старт обсуждения проекта
-          </div>
-        </div>
+
         </Card>
 
-        <motion.form
-          onSubmit={onSubmit}
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
           className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.24)] backdrop-blur-md"
         >
-          <div className="grid gap-5 md:grid-cols-2">
-            <label className="space-y-2">
-              <span className="text-sm text-slate-300">Имя</span>
-              <input
-                value={form.name}
-                onChange={(e) => updateField("name", e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-emerald-300/40 focus:ring-2 focus:ring-emerald-300/10"
-                placeholder="Ваше имя"
-                required
-              />
-            </label>
+          <div className="text-sm text-slate-400">Что указать в сообщении</div>
 
-            <label className="space-y-2">
-              <span className="text-sm text-slate-300">Telegram / Email</span>
-              <input
-                value={form.contact}
-                onChange={(e) => updateField("contact", e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-emerald-300/40 focus:ring-2 focus:ring-emerald-300/10"
-                placeholder="@username или email"
-                required
-              />
-            </label>
-          </div>
+          <h3 className="mt-3 text-2xl font-semibold text-white">
+            Информация для быстрой оценки проекта
+          </h3>
 
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
-            <label className="space-y-2">
-              <span className="text-sm text-slate-300">Тип проекта</span>
-              <select
-                value={form.projectType}
-                onChange={(e) => updateField("projectType", e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-emerald-300/40 focus:ring-2 focus:ring-emerald-300/10"
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+            Чем понятнее исходные вводные, тем быстрее можно оценить объем работ,
+            подобрать подходящую архитектуру и предложить реалистичный следующий шаг.
+          </p>
+
+          <div className="mt-6 space-y-4">
+            {briefingItems.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-4 text-sm text-slate-200"
               >
-                <option>Telegram-бот</option>
-                <option>Бот в Max</option>
-                <option>Парсер</option>
-                <option>Система приема заявок</option>
-                <option>CRM-интеграция</option>
-                <option>AI-автоматизация</option>
-                <option>Backend-система</option>
-              </select>
-            </label>
-
-            <label className="space-y-2">
-              <span className="text-sm text-slate-300">Бюджет</span>
-              <input
-                value={form.budget}
-                onChange={(e) => updateField("budget", e.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-emerald-300/40 focus:ring-2 focus:ring-emerald-300/10"
-                placeholder="Например: от 50 000 ₽"
-              />
-            </label>
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
 
-          <label className="mt-5 block space-y-2">
-            <span className="text-sm text-slate-300">Описание задачи</span>
-            <textarea
-              rows={6}
-              value={form.description}
-              onChange={(e) => updateField("description", e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-emerald-300/40 focus:ring-2 focus:ring-emerald-300/10"
-              placeholder="Опишите, что нужно автоматизировать, какие есть процессы, интеграции и желаемый результат"
-              required
-            />
-          </label>
-
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="text-xs leading-6 text-slate-400">
-              {successMessage && <p className="text-emerald-300">{successMessage}</p>}
-              {errorMessage && <p className="text-rose-300">{errorMessage}</p>}
-              {!successMessage && !errorMessage && (
-                <p>После отправки можно перейти к обсуждению задачи, сроков и следующего шага.</p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-400 px-5 py-3 text-sm font-medium text-slate-950 shadow-[0_0_24px_rgba(74,222,128,0.28)] transition hover:shadow-[0_0_34px_rgba(74,222,128,0.4)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {isLoading ? "Отправка..." : "Отправить заявку"}
-              <ArrowRight className="h-4 w-4" />
-            </button>
-
-            <p className="text-xs text-slate-400 mt-2">
-              Я свяжусь с вами в течение 24 часов
-            </p>
+          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm leading-7 text-slate-300">
+            Можно писать даже без полного технического задания. Достаточно описать идею,
+            текущую проблему или желаемый результат — дальше структуру проекта уже можно
+            собрать в процессе обсуждения.
           </div>
-        </motion.form>
+        </motion.div>
       </div>
     </section>
   );

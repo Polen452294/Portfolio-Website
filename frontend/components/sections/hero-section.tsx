@@ -13,8 +13,8 @@ const previewItems = [
     icon: Bot,
   },
   {
-    title: "Прием заявок",
-    text: "Форма → API → база данных → админка",
+    title: "Контактный сценарий",
+    text: "Удобный старт обсуждения проекта без сложной формы",
     icon: Database,
   },
   {
@@ -53,7 +53,7 @@ export function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <GlowButton href="#request">Start Project</GlowButton>
+          <GlowButton href="#contact">Обсудить проект</GlowButton>
           <GlowButton href="#portfolio" secondary>
             View Portfolio
           </GlowButton>
@@ -61,18 +61,18 @@ export function HeroSection() {
 
         <div className="mt-10 grid max-w-2xl grid-cols-2 gap-4 md:grid-cols-4">
           {metrics.map((item) => (
-          <Card
-            key={item.label}
-            className="flex min-h-[180px] flex-col justify-center rounded-2xl p-5"
-          >
-            <div className="text-2xl font-semibold leading-none text-emerald-300">
-              {item.value}
-            </div>
-            <div className="mt-3 max-w-[160px] text-sm leading-relaxed text-slate-300 break-words">
-              {item.label}
-            </div>
-          </Card>
-        ))}
+            <Card
+              key={item.label}
+              className="flex min-h-[180px] flex-col justify-center rounded-2xl p-5"
+            >
+              <div className="text-2xl font-semibold leading-none text-emerald-300">
+                {item.value}
+              </div>
+              <div className="mt-3 max-w-[160px] break-words text-sm leading-relaxed text-slate-300">
+                {item.label}
+              </div>
+            </Card>
+          ))}
         </div>
       </motion.div>
 
@@ -114,7 +114,7 @@ export function HeroSection() {
                       <div className="text-sm font-medium leading-tight text-white">
                         {item.title}
                       </div>
-                      <div className="mt-1 max-w-[180px] text-xs leading-relaxed text-slate-400 break-words">
+                      <div className="mt-1 max-w-[180px] break-words text-xs leading-relaxed text-slate-400">
                         {item.text}
                       </div>
                     </div>

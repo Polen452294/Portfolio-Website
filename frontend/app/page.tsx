@@ -1,5 +1,4 @@
 import FloatingShapes from "@/components/background/floating-shapes";
-import { ContactSection } from "@/components/sections/contact-section";
 import { ExtraSection } from "@/components/sections/extra-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PortfolioSection } from "@/components/sections/portfolio-section";
@@ -7,6 +6,7 @@ import { ProcessSection } from "@/components/sections/process-section";
 import { RequestSection } from "@/components/sections/request-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { TechSection } from "@/components/sections/tech-section";
+import { TrustSection } from "@/components/sections/trust-section";
 import { GlowButton } from "@/components/ui/glow-button";
 
 export default function Page() {
@@ -36,19 +36,19 @@ export default function Page() {
               </a>
             </nav>
 
-            <GlowButton href="#request">Обсудить проект</GlowButton>
+            <GlowButton href="#contact">Обсудить проект</GlowButton>
           </div>
         </header>
 
         <main id="top">
           <HeroSection />
+          <TrustSection />
           <ServicesSection />
           <PortfolioSection />
           <ProcessSection />
           <ExtraSection />
           <TechSection />
           <RequestSection />
-          <ContactSection />
         </main>
       </div>
     </div>
