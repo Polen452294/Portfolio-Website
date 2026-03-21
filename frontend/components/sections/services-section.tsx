@@ -16,12 +16,11 @@ export function ServicesSection() {
           const Icon = service.icon;
           const isFeatured = index === 0;
           const isTransferService = service.title.includes("Перенос ботов из Telegram");
-          const shouldGlow = isFeatured || isTransferService;
           const shouldTintCard = isFeatured && !isTransferService;
 
           return (
             <div key={service.title} className="relative">
-              {shouldGlow && (
+              {isFeatured && (
                 <>
                   <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-emerald-400/18 blur-3xl sm:-inset-8 sm:rounded-[44px]" />
                   <div className="pointer-events-none absolute -inset-4 overflow-visible rounded-[32px]">
@@ -36,7 +35,9 @@ export function ServicesSection() {
                 className={[
                   "relative z-10 flex h-full min-h-[50px] flex-col p-4 sm:min-h-[355px] sm:p-6",
                   shouldTintCard ? "border-emerald-400/30 bg-emerald-400/[0.04]" : "",
-                  isTransferService ? "shadow-[0_0_120px_rgba(52,211,153,0.22)]" : "",
+                  isTransferService
+                    ? "border-emerald-400/45 shadow-[0_0_0_1px_rgba(52,211,153,0.3),0_0_48px_rgba(52,211,153,0.2)]"
+                    : "",
                 ].join(" ")}
               >
                 {isFeatured ? (
