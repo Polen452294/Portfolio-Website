@@ -46,7 +46,7 @@ export function ContactSection() {
               </a>
 
               <a
-                href="https://mail.google.com/mail/u/0/#inbox"
+                href="https://mailto:polen1259@gmail.com"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08]"
               >
                 <Mail className="h-4 w-4 text-emerald-300" />
