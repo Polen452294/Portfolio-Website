@@ -15,23 +15,28 @@ export function ServicesSection() {
         {services.map((service, index) => {
           const Icon = service.icon;
           const isFeatured = index === 0;
+          const isTransferService = service.title.includes("Перенос ботов из Telegram");
+          const shouldGlow = isFeatured || isTransferService;
+          const shouldTintCard = isFeatured && !isTransferService;
 
           return (
             <div key={service.title} className="relative">
-              {isFeatured && (
+              {shouldGlow && (
                 <>
-                  <div className="pointer-events-none absolute -inset-3 rounded-[28px] bg-emerald-400/10 blur-3xl sm:-inset-4 sm:rounded-[32px]" />
-                  <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-                    <div className="absolute left-1/2 top-[58%] h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300/20 blur-[38px] sm:h-32 sm:w-32 sm:blur-[52px]" />
-                    <div className="absolute left-[42%] top-[30%] h-16 w-16 rounded-full bg-emerald-400/10 blur-[28px] sm:h-24 sm:w-24 sm:blur-[40px]" />
+                  <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-emerald-400/18 blur-3xl sm:-inset-8 sm:rounded-[44px]" />
+                  <div className="pointer-events-none absolute -inset-4 overflow-visible rounded-[32px]">
+                    <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300/28 blur-[90px] sm:h-64 sm:w-64 sm:blur-[130px]" />
+                    <div className="absolute left-[18%] top-[18%] h-24 w-24 rounded-full bg-emerald-400/20 blur-[56px] sm:h-36 sm:w-36 sm:blur-[80px]" />
+                    <div className="absolute right-[14%] bottom-[14%] h-24 w-24 rounded-full bg-emerald-300/18 blur-[56px] sm:h-36 sm:w-36 sm:blur-[80px]" />
                   </div>
                 </>
               )}
 
               <Card
                 className={[
-                  "relative flex h-full min-h-[50px] flex-col p-4 sm:min-h-[355px] sm:p-6",
-                  isFeatured ? "border-emerald-400/30 bg-emerald-400/[0.04]" : "",
+                  "relative z-10 flex h-full min-h-[50px] flex-col p-4 sm:min-h-[355px] sm:p-6",
+                  shouldTintCard ? "border-emerald-400/30 bg-emerald-400/[0.04]" : "",
+                  isTransferService ? "shadow-[0_0_120px_rgba(52,211,153,0.22)]" : "",
                 ].join(" ")}
               >
                 {isFeatured ? (
