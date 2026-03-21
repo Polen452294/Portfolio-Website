@@ -82,8 +82,8 @@ export function TrustSection() {
           </div>
 
           <div className="mt-6 flex flex-col gap-3">
-            <GlowButton href="PASTE_PROFI_REVIEWS_URL">Отзывы на Profi.ru</GlowButton>
-            <GlowButton href="PASTE_PROFI_PROFILE_URL" secondary>
+            <GlowButton href="https://profi.ru/profile/ArdashevAD/#reviews-tab">Отзывы на Profi.ru</GlowButton>
+            <GlowButton href="https://profi.ru/profile/ArdashevAD/" secondary>
               Профиль на Profi.ru
             </GlowButton>
           </div>
