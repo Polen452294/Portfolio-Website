@@ -10,13 +10,13 @@ type GlowButtonProps = {
 export function GlowButton({
   children,
   secondary = false,
-  href = "#request",
+  href = "#contact",
 }: GlowButtonProps) {
   return (
     <a
       href={href}
       className={[
-        "group inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-200 active:scale-95",
+        "group inline-flex w-full items-center justify-center gap-2 rounded-[20px] px-4 py-3 text-sm font-medium transition-all duration-200 active:scale-95 sm:w-auto sm:rounded-2xl sm:px-5 sm:py-3",
         secondary
           ? "border border-emerald-400/20 bg-white/5 text-white hover:border-emerald-300/40 hover:bg-white/10"
           : "bg-emerald-400 text-slate-950 shadow-[0_0_24px_rgba(74,222,128,0.28)] hover:shadow-[0_0_34px_rgba(74,222,128,0.4)]",

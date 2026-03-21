@@ -12,58 +12,62 @@ import { SectionTitle } from "@/components/ui/section-title";
 const extraItems = [
   {
     title: "Быстрый запуск MVP",
-    text: "Можно быстро запустить первую рабочую версию проекта, чтобы проверить идею на практике, получить обратную связь и не тратить месяцы на долгую подготовку.",
+    text: "Можно быстро запустить первую рабочую версию проекта, чтобы проверить идею на практике и не тратить месяцы на подготовку.",
     icon: Rocket,
   },
   {
-    title: "Удобный старт общения с клиентом",
-    text: "Вместо перегруженного сценария можно выстроить простой и понятный способ связи: через мессенджер, email или короткий бриф для первичной оценки проекта.",
+    title: "Удобный старт общения",
+    text: "Простой и понятный способ связи: мессенджер, email или короткий бриф для первичной оценки.",
     icon: Database,
   },
   {
-    title: "Боты и автоматизация процессов",
-    text: "Проект можно дополнить ботами, уведомлениями и автоматическими сценариями, чтобы сократить ручную работу и ускорить обработку задач.",
+    title: "Боты и автоматизация",
+    text: "Проект можно дополнить ботами, уведомлениями и автоматическими сценариями.",
     icon: Bot,
   },
   {
     title: "Интеграции с CRM и API",
-    text: "Проект можно связать с CRM, платежами, таблицами, внутренними сервисами и внешними API, чтобы данные передавались автоматически и без лишних действий вручную.",
+    text: "Связка с CRM, таблицами, внутренними сервисами и внешними API.",
     icon: Layers3,
   },
   {
     title: "Аналитика и управляемость",
-    text: "Можно подключить аналитику, статусы, административные инструменты и контроль ключевых этапов, чтобы видеть эффективность системы и принимать решения на основе данных.",
+    text: "Можно подключить аналитику, статусы и административные инструменты.",
     icon: BarChart3,
   },
   {
-    title: "Презентация кейсов и доверие",
-    text: "Понятная структура, аккуратная подача услуг и реальные кейсы помогают быстрее сформировать доверие и повышают вероятность того, что посетитель перейдет к обсуждению проекта.",
+    title: "Кейсы и доверие",
+    text: "Понятная подача услуг и реальные кейсы помогают быстрее перейти к обсуждению проекта.",
     icon: FileText,
   },
 ];
 
 export function ExtraSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <SectionTitle
         eyebrow="Extra Value"
         title="Что вы получаете на выходе"
-        text="Не просто скрипт, а инструмент, который помогает упрощать процессы, улучшать взаимодействие с клиентами и закладывать основу для дальнейшего роста проекта."
+        text="Не просто код, а инструмент, который помогает упрощать процессы и готовить проект к дальнейшему росту."
       />
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-3">
         {extraItems.map((item) => {
           const Icon = item.icon;
 
           return (
-            <Card key={item.title} className="h-full">
-              <div className="mb-4 inline-flex rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-emerald-300">
-                <Icon className="h-5 w-5" />
+            <Card key={item.title} className="h-full p-4 sm:p-6">
+              <div className="mb-3 inline-flex rounded-[18px] border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300 sm:mb-4 sm:rounded-2xl sm:p-3">
+                <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
 
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              <h3 className="text-[15px] font-semibold leading-5 text-white sm:text-lg sm:leading-6">
+                {item.title}
+              </h3>
 
-              <p className="mt-3 text-sm leading-7 text-slate-300">{item.text}</p>
+              <p className="mt-2.5 text-[13px] leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-7">
+                {item.text}
+              </p>
             </Card>
           );
         })}

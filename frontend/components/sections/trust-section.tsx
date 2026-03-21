@@ -6,83 +6,84 @@ import { SectionTitle } from "@/components/ui/section-title";
 const trustItems = [
   {
     title: "Реальные отзывы клиентов",
-    text: "На Profi.ru можно заранее посмотреть отзывы и понять, как проходит работа со мной на практике.",
+    text: "На Profi.ru можно заранее посмотреть отзывы и понять, как проходит работа на практике.",
     icon: Star,
   },
   {
     title: "Открытый профиль исполнителя",
-    text: "Профиль на платформе открыт для просмотра, поэтому до начала работы можно ознакомиться с информацией обо мне.",
+    text: "Профиль открыт для просмотра, поэтому до начала работы можно ознакомиться с информацией обо мне.",
     icon: BadgeCheck,
   },
   {
     title: "Личность подтверждена платформой",
-    text: "Аккаунт на Profi.ru подтвержден платформой, включая проверку паспорта, что добавляет прозрачности.",
+    text: "Аккаунт подтвержден платформой, включая проверку паспорта, что добавляет прозрачности и доверия.",
     icon: ShieldCheck,
   },
   {
     title: "Понятный старт сотрудничества",
-    text: "Сначала можно обсудить задачу, оценить формат работы и только потом переходить к реализации проекта.",
+    text: "Сначала можно обсудить задачу, формат работы и только потом переходить к реализации проекта.",
     icon: FileCheck2,
   },
 ];
 
 export function TrustSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <SectionTitle
         eyebrow="Reviews & Reputation"
         title="Гарантии качества и отзывы"
-        text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой. Это помогает начать сотрудничество спокойнее и прозрачнее."
+        text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой."
       />
 
-      <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <Card className="h-full">
-          <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        <Card className="h-full p-4 sm:p-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {trustItems.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+                  className="rounded-[20px] border border-white/10 bg-white/[0.03] p-4 sm:rounded-2xl sm:p-5"
                 >
-                  <div className="mb-4 inline-flex rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-emerald-300">
-                    <Icon className="h-5 w-5" />
+                  <div className="mb-3 inline-flex rounded-[18px] border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300 sm:mb-4 sm:rounded-2xl sm:p-3">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
 
-                  <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">{item.text}</p>
+                  <h3 className="text-[15px] font-semibold leading-5 text-white sm:text-base sm:leading-6">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2.5 text-[13px] leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-7">
+                    {item.text}
+                  </p>
                 </div>
               );
             })}
           </div>
         </Card>
 
-        <Card className="flex h-full flex-col justify-between">
+        <Card className="flex h-full flex-col justify-between p-4 sm:p-6">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-emerald-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300 sm:text-xs sm:tracking-[0.24em]">
               <ShieldCheck className="h-3.5 w-3.5" />
               Profi.ru
             </div>
 
-            <h3 className="mt-4 text-2xl font-semibold text-white">
+            <h3 className="mt-4 text-xl font-semibold text-white sm:text-2xl">
               Проверяемая репутация и открытая информация
             </h3>
 
-            <p className="mt-4 text-sm leading-7 text-slate-300">
-              Это не просто сайт-визитка. При желании можно перейти на профиль Profi.ru,
-              посмотреть отзывы, ознакомиться с аккаунтом и увидеть подтвержденную
-              платформой личность. Такой формат снижает недоверие на старте и делает
-              обсуждение проекта более комфортным.
+            <p className="mt-4 text-sm leading-6 text-slate-300 sm:leading-7">
+              Можно перейти на профиль Profi.ru, посмотреть отзывы, ознакомиться с
+              аккаунтом и увидеть подтвержденную платформой личность. Такой формат
+              делает старт сотрудничества спокойнее и прозрачнее.
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <GlowButton href="https://profi.ru/profile/ArdashevAD/#reviews-tab">
-              Отзывы на Profi.ru
-            </GlowButton>
-
-            <GlowButton href="https://profi.ru/profile/ArdashevAD" secondary>
+          <div className="mt-6 flex flex-col gap-3">
+            <GlowButton href="PASTE_PROFI_REVIEWS_URL">Отзывы на Profi.ru</GlowButton>
+            <GlowButton href="PASTE_PROFI_PROFILE_URL" secondary>
               Профиль на Profi.ru
             </GlowButton>
           </div>
