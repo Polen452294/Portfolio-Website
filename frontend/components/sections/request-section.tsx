@@ -58,7 +58,10 @@ export function RequestSection() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section
+      id="contact"
+      className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:px-10"
+    >
       <div className="grid gap-4 sm:gap-5 lg:grid-cols-[0.92fr_1.08fr]">
         <Card>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300 sm:text-xs sm:tracking-[0.24em]">

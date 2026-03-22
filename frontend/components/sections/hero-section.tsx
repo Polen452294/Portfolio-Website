@@ -31,18 +31,18 @@ const previewItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid min-h-[auto] max-w-7xl items-center gap-8 px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-20 lg:min-h-[92vh] lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16">
+    <section className="relative mx-auto grid min-h-[auto] max-w-7xl items-center gap-8 px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-20 lg:min-h-[92vh] lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:gap-10 min-[1024px]:max-[1440px]:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10"
       >
-        <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px]">
+        <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[68px]">
           Разрабатываю системы автоматизации, ботов и AI-решения для бизнеса
         </h1>
 
-        <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
+        <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
           Создаю проекты, которые уменьшают ручную рутину, ускоряют процессы,
           объединяют сервисы через API и превращают задачи в работающую систему.
         </p>
@@ -54,11 +54,11 @@ export function HeroSection() {
           </GlowButton>
         </div>
 
-        <div className="mt-7 grid max-w-2xl grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-4">
+        <div className="mt-7 grid max-w-2xl grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-4 min-[1024px]:max-[1440px]:max-w-[760px]">
           {metrics.map((item) => (
             <Card
               key={item.label}
-              className="flex min-h-[96px] flex-col justify-center p-4 sm:min-h-[150px] sm:p-5 md:min-h-[180px]"
+              className="flex min-h-[96px] flex-col justify-center p-4 sm:min-h-[150px] sm:p-5 md:min-h-[180px] min-[1024px]:max-[1440px]:min-h-[156px]"
             >
               <div className="text-xl font-semibold leading-none text-emerald-300 sm:text-2xl">
                 {item.value}
@@ -75,11 +75,11 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-        className="relative mx-auto flex w-full max-w-xl justify-center lg:justify-end"
+        className="relative mx-auto flex w-full max-w-xl justify-center lg:justify-end min-[1024px]:max-[1440px]:max-w-[420px]"
       >
         <div className="absolute -inset-2 rounded-[28px] bg-emerald-400/10 blur-3xl sm:-inset-4 sm:rounded-[42px]" />
 
-        <div className="relative w-full max-w-[320px] rounded-[24px] border border-white/10 bg-[#081122]/80 p-3 shadow-[0_0_60px_rgba(52,211,153,0.08)] sm:max-w-[400px] sm:rounded-[40px] sm:p-4">
+        <div className="relative w-full max-w-[320px] rounded-[24px] border border-white/10 bg-[#081122]/80 p-3 shadow-[0_0_60px_rgba(52,211,153,0.08)] sm:max-w-[400px] sm:rounded-[40px] sm:p-4 min-[1024px]:max-[1440px]:max-w-[360px]">
           <div className="rounded-[20px] border border-white/5 bg-[#020617] p-3 sm:rounded-[32px] sm:p-4">
             <div className="mb-4 flex items-center justify-between">
               <div>

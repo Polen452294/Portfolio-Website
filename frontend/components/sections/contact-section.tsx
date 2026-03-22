@@ -1,4 +1,4 @@
-import { CheckCircle2, Github, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const features = [
@@ -11,7 +11,10 @@ const features = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8">
+    <section
+      id="contact"
+      className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:px-10"
+    >
       <Card className="overflow-hidden p-0">
         <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="p-8 md:p-10">
@@ -49,7 +52,6 @@ export function ContactSection() {
                 href="mailto:aardashev8@gmail.com"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08]"
               >
-                <Mail className="h-4 w-4 text-emerald-300" />
                 Email
               </a>
             </div>
@@ -78,4 +80,4 @@ export function ContactSection() {
       </Card>
     </section>
   );
-} 
+}
