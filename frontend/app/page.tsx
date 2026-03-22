@@ -16,7 +16,7 @@ export default function Page() {
         <FloatingShapes />
 
         <header className="sticky top-0 z-40 border-b border-white/5 bg-slate-950/65 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4 lg:px-12 xl:px-16">
             <a href="#top" className="text-[15px] font-semibold tracking-tight text-white sm:text-lg">
               Ardashev<span className="text-emerald-300">.</span>dev
             </a>

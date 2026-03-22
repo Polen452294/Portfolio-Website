@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Settings2, Bot, Database, Layers3, Sparkles } from "lucide-react";
+import { Bot, Database, Layers3, Sparkles } from "lucide-react";
 import { metrics } from "@/data/site-data";
 import { Card } from "@/components/ui/card";
 import { GlowButton } from "@/components/ui/glow-button";
@@ -31,18 +31,18 @@ const previewItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid min-h-[auto] max-w-7xl items-center gap-8 px-4 pb-10 pt-10 sm:px-6 sm:pb-20 sm:pt-20 lg:min-h-[92vh] lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:px-8">
+    <section className="relative mx-auto grid min-h-[auto] max-w-7xl items-center gap-8 px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-20 lg:min-h-[92vh] lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10"
       >
-        <h1 className="max-w-3xl text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-7xl">
+        <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px]">
           Разрабатываю системы автоматизации, ботов и AI-решения для бизнеса
         </h1>
 
-        <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
+        <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
           Создаю проекты, которые уменьшают ручную рутину, ускоряют процессы,
           объединяют сервисы через API и превращают задачи в работающую систему.
         </p>
