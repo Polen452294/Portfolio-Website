@@ -71,6 +71,24 @@ export const portfolio = [
     text: "Инструмент для автоматического поиска и обработки новых заказов с Profi.ru: сбор данных, фильтрация подходящих заявок и подготовка результатов для дальнейшей работы.",
     githubUrl: "https://github.com/Polen452294/Profi.ru_Parser_Bot",
   },
+  {
+    title: "Max Python Bot",
+    stack: "Python • MAX API • Bot Workflow",
+    text: "Бот для Max, который помогает удобно принимать и обрабатывать заявки. Подходит для первичного контакта с клиентом, сбора информации и автоматизации сценария общения внутри Max.",
+    githubUrl: "https://github.com/Polen452294/Max-Python-Bot",
+  },
+  {
+    title: "Telegram Round Converter",
+    stack: "Python • Telegram Bot API • Media Processing",
+    text: "Telegram-бот для создания кружков из видео. Автоматизирует конвертацию обычных роликов в формат video note и упрощает работу с контентом для Telegram.",
+    githubUrl: "https://github.com/Polen452294/Telegram-Round-Converter",
+  },
+  {
+    title: "AntiAd Bot",
+    stack: "Python • aiogram • Telegram Moderation",
+    text: "Бот-модератор для Telegram-чатов, который удаляет рекламу и нежелательные сообщения. Помогает поддерживать порядок в обсуждениях и снижает нагрузку на администраторов.",
+    githubUrl: "https://github.com/Polen452294/AntiAd_Bot",
+  },
 ];
 
 export const processSteps = [
