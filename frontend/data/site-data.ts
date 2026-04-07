@@ -54,6 +54,12 @@ export const services = [
 
 export const portfolio = [
   {
+  title: "USDT Exchange Bot",
+  stack: "Python, aiogram, vk_api, PostgreSQL, SQLAlchemy, AsyncIO, CRM Integration, Worker System",
+  text: "Чат-бот для автоматизации обмена USDT ↔ наличные с интеграцией CRM: пошаговая логика взаимодействия с пользователем, хранение заявок, единая архитектура для Telegram и VK, автоматические дожимы (nudge1–nudge7) и фоновая обработка задач.",
+  githubUrl: "https://github.com/your_repo/usdt_exchange_bot",
+  },
+  {
     title: "BookMarket Project",
     stack: "Python, aiogram, PostgreSQL, SQLAlchemy, AsyncIO, Admin Tools",
     text: "Платформа для работы с каталогом книг, заявками и административным управлением: удобная структура, автоматизация обработки данных и инструменты для сопровождения пользователей.",
@@ -62,7 +68,7 @@ export const portfolio = [
   {
     title: "Consultation Bot",
     stack: "Python, aiogram, PostgreSQL, SQLAlchemy, AsyncIO, Payment Integration, Admin Tools",
-    text: "Бот для приема и обработки заявок на консультации с удобной логикой взаимодействия, хранением данных, административным управлением и автоматизацией ключевых этапов работы с клиентом.",
+    text: "Чат-бот для приема и обработки заявок на консультации с удобной логикой взаимодействия, хранением данных, административным управлением и автоматизацией ключевых этапов работы с клиентом.",
     githubUrl: "https://github.com/Polen452294/Consultation_bot",
   },
   {
@@ -74,14 +80,8 @@ export const portfolio = [
   {
     title: "Max Python Bot",
     stack: "Python • MAX API • Bot Workflow",
-    text: "Бот для Max, который помогает удобно принимать и обрабатывать заявки. Подходит для первичного контакта с клиентом, сбора информации и автоматизации сценария общения внутри Max.",
+    text: "Чат-бот для Max, который помогает удобно принимать и обрабатывать заявки. Подходит для первичного контакта с клиентом, сбора информации и автоматизации сценария общения внутри Max.",
     githubUrl: "https://github.com/Polen452294/Max-Python-Bot",
-  },
-  {
-    title: "Telegram Round Converter",
-    stack: "Python • Telegram Bot API • Media Processing",
-    text: "Telegram-бот для создания кружков из видео. Автоматизирует конвертацию обычных роликов в формат video note и упрощает работу с контентом для Telegram.",
-    githubUrl: "https://github.com/Polen452294/Telegram-Round-Converter",
   },
   {
     title: "AntiAd Bot",
