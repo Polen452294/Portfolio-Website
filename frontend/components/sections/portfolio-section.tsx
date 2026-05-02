@@ -7,7 +7,7 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:px-10"
+      className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:px-12"
     >
       <SectionTitle
         eyebrow="Portfolio"

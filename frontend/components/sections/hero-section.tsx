@@ -31,15 +31,15 @@ const previewItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid min-h-[auto] max-w-7xl items-center gap-8 px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-20 lg:min-h-[92vh] lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:gap-10 min-[1024px]:max-[1440px]:px-10">
+    <section className="relative mx-auto grid max-w-7xl items-start gap-8 px-5 pt-6 pb-6 sm:px-8 sm:pt-10 sm:pb-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10"
       >
-        <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[68px]">
-          Разрабатываю чат-ботов, системы автоматизации и AI-решения для бизнеса
+        <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
+          Разработка чат-ботов, CRM данных, парсеров, системы автоматизации и AI-решения
         </h1>
 
         <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
@@ -52,22 +52,6 @@ export function HeroSection() {
           <GlowButton href="#portfolio" secondary>
             Посмотреть портфолио
           </GlowButton>
-        </div>
-
-        <div className="mt-7 grid max-w-2xl grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-4 min-[1024px]:max-[1440px]:max-w-[760px]">
-          {metrics.map((item) => (
-            <Card
-              key={item.label}
-              className="flex min-h-[96px] flex-col justify-center p-4 sm:min-h-[150px] sm:p-5 md:min-h-[180px] min-[1024px]:max-[1440px]:min-h-[156px]"
-            >
-              <div className="text-xl font-semibold leading-none text-emerald-300 sm:text-2xl">
-                {item.value}
-              </div>
-              <div className="mt-2 text-xs leading-6 text-slate-300 sm:mt-3 sm:text-sm sm:leading-relaxed">
-                {item.label}
-              </div>
-            </Card>
-          ))}
         </div>
       </motion.div>
 

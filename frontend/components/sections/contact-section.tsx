@@ -13,7 +13,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8 min-[1024px]:max-[1440px]:max-w-[1240px] min-[1024px]:max-[1440px]:px-10"
+      className="mx-auto max-w-6xl px-5 py-7 sm:px-8 sm:py-10 lg:px-12 lg:py-12 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:px-12"
     >
       <Card className="overflow-hidden p-0">
         <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
